@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_graph"
+    app:startDestination="@id/WelcomeFragment">
+    <fragment
+        android:id="@+id/WelcomeFragment"
+        android:name="com.ridery.here.startModule.view.WelcomeFragment"
+        android:label="@string/start_fragment_label"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_WelcomeFragment_to_SignInFragment"
+            app:destination="@id/SignInFragment" />
+        <action
+            android:id="@+id/action_WelcomeFragment_to_LogInFragment"
+            app:destination="@id/LogInFragment" />
+        <action
+            android:id="@+id/action_WelcomeFragment_to_main_graph"
+            app:destination="@id/main_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/SignInFragment"
+        android:name="com.ridery.here.startModule.view.SignInFragment"
+        android:label="@string/sign_in_fragment_label"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_SignInFragment_to_LogInFragment"
+            app:destination="@id/LogInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/LogInFragment"
+        android:name="com.ridery.here.startModule.view.LogInFragment"
+        android:label="@string/log_in_fragment_label"
+        tools:layout="@layout/fragment_log_in">
+
+        <action
+            android:id="@+id/action_LogInFragment_to_main_graph"
+            app:destination="@id/main_graph" />
+        <action
+            android:id="@+id/action_LogInFragment_to_WelcomeFragment"
+            app:destination="@id/WelcomeFragment" />
+    </fragment>
+    <include app:graph="@navigation/main_graph" />
+</navigation>
